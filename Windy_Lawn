@@ -1,0 +1,36 @@
+function setup() {
+  createCanvas(400, 200);
+  colorMode(HSB);
+}
+
+var x = 0;
+var grassh = 10;
+function setup() {
+  createCanvas(400, 200);
+  colorMode(HSB);
+}
+
+var x = 0;
+var grassh = 10;
+
+function draw() {
+  stroke(random(60, 70), 100, 90); //grass blades
+  line(x, height-10, x+random(0, 40), height-10-random(grassh));
+  noStroke(); //lawnmower
+
+  x = x + 10;//repetitive visit speed
+
+  if (x > width) {
+    x = random(10);
+    grassh = grassh + 10;
+  }//loops
+
+ 
+ if (random() > 0.999) {
+    fill(255);
+    rect(0, 0, width, height-10);//length of grass
+    grassh = 10;
+  }
+  fill(40, 100, 60);
+  rect(0, height-10, width, 10);
+}
